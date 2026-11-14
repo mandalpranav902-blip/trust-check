@@ -1,0 +1,6 @@
+{
+  "name": "TrustCheck",
+  "description": "India-focused scam and phishing detector combining deterministic security rules with plain-language AI explanations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
