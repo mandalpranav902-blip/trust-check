@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 from typing import Any, Literal
 
-from dotenv import load_dotenv
+
 from fastapi import FastAPI
 from pydantic import BaseModel, Field, field_validator
 from fastapi import FastAPI, HTTPException
@@ -20,8 +20,10 @@ _ROOT_DIR = Path(__file__).resolve().parent.parent
 if str(_ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(_ROOT_DIR))
 
-load_dotenv(_ROOT_DIR / ".env.local")
-load_dotenv(_ROOT_DIR / ".env")
+try:
+    from dotenv import load_dotenv
+except ImportError:  # not needed on Vercel, where env vars are injected
+    load_dotenv = None
 
 from trustcheck import analyze_message  # noqa: E402
 
