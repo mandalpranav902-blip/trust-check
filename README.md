@@ -1,1 +1,1 @@
-# trust-check
+# TrustCheck
